@@ -1,4 +1,4 @@
-package testApi;
+package test.api;
 
 import helper.RequestCustom;
 import io.qameta.allure.Description;
@@ -114,7 +114,6 @@ public class GetOrder {
             checkStatus(HttpStatus.SC_UNAUTHORIZED);
             checkResponseError(false, "You should be authorised");
         });
-
     }
 
     @Step("Проверяем, что статус код = {httpStatus}")

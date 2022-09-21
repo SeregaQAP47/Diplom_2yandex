@@ -1,4 +1,4 @@
-package testApi;
+package test.api;
 
 import helper.RequestCustom;
 import io.qameta.allure.Description;
@@ -137,13 +137,11 @@ public class LoginUser {
 
     @Step("Проверка тела ответа")
     private void checkBodyResponse(String expectEmail, String expectName) {
-        System.out.println("Начало проверки");
         response.then().assertThat().body("success", equalTo(true))
                 .and().assertThat().body("user.email", equalTo(expectEmail.toLowerCase()))
                 .and().assertThat().body("user.name", equalTo(expectName))
                 .and().assertThat().body("accessToken", notNullValue())
                 .and().assertThat().body("refreshToken", notNullValue());
-        System.out.println("Проверка завершена");
     }
 
     @Step("Проверяем, что статус код = {httpStatus}")
