@@ -1,4 +1,4 @@
-package testPage.ByYandex;
+package test.page.chrome;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
@@ -8,21 +8,20 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import pageObjects.LoginPage;
-import pageObjects.MainPage;
+import page.objects.LoginPage;
+import page.objects.MainPage;
 
 import static io.qameta.allure.Allure.step;
 import static org.junit.Assert.assertEquals;
 
-public class TestTransitionToLoginPage_Yandex {
+public class TestTransitionToLoginPage_Chrome {
     private WebDriver driver;
     private String URL = "https://stellarburgers.nomoreparties.site/";
 
-
+    //Инициализация Chrome driver
     @Before
-    //Инициализация Yandex driver
-    public void startYandex() {
-        System.setProperty("webdriver.chrome.driver", "C:/yandexdriver.exe");
+    public void startChrome() {
+        System.setProperty("webdriver.chrome.driver", "C:/chromedriver105.exe");
     }
 
     @Test
@@ -31,7 +30,7 @@ public class TestTransitionToLoginPage_Yandex {
             "<p> Тестирование выполняется в браузере Chrome </p>" +
             "<ul> Проверяем: </ul>" +
             "<li> Переход в личный кабинет успешно выполнен </li>")
-    public void testTransferPersonalAccount() {
+    public void testTransferPersonalAccount_Chrome() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless", "--no-sandbox"); //для запуска в полноэкранном режиме "--start-maximized"
         driver = new ChromeDriver(options);
@@ -51,7 +50,6 @@ public class TestTransitionToLoginPage_Yandex {
             assertEquals("Вход", loginPage.getTextTitle());
         });
     }
-
 
     @After
     public void teardown() {

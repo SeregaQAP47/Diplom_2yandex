@@ -1,4 +1,4 @@
-package testPage.ByYandex;
+package test.page.chrome;
 
 import helper.RequestCustom;
 import io.qameta.allure.Description;
@@ -8,13 +8,13 @@ import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import pageObjects.*;
+import page.objects.*;
 import pojo.User;
 
 import static io.qameta.allure.Allure.step;
 import static org.junit.Assert.assertEquals;
 
-public class TestLogin_Yandex {
+public class TestLogin_Chrome {
     private WebDriver driver;
     private static Response response;
     private static String email = "jackTest@test.ru";
@@ -25,9 +25,8 @@ public class TestLogin_Yandex {
     private String URL = "https://stellarburgers.nomoreparties.site/";
 
     @Before
-    //Инициализация Yandex driver
-    public void startYandex() {
-        System.setProperty("webdriver.chrome.driver", "C:/yandexdriver.exe");
+    public void start() {
+        System.setProperty("webdriver.chrome.driver", "C:/chromedriver105.exe");
     }
 
     @BeforeClass

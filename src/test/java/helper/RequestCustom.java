@@ -21,7 +21,6 @@ public class RequestCustom {
             .setContentType(ContentType.JSON)
             .log(LogDetail.ALL).build();
 
-
     @Step("Запрос POST /auth/reqister")
     public Response postCreateUser(User user) {
         response = given()
@@ -37,7 +36,6 @@ public class RequestCustom {
     @Step("Запрос DELETE /auth/user")
     public Response deleteUser(String token) {
         response = given()
-//                .spec((RequestSpecification)requestSpecification)
                 .baseUri(BASE_URL)
                 .auth().oauth2(token)
                 .and()

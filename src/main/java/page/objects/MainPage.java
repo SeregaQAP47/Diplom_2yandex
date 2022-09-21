@@ -1,5 +1,4 @@
-package pageObjects;
-
+package page.objects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -37,20 +36,22 @@ public class MainPage {
 
     private By classIngredients = By.cssSelector(".tab_tab__1SPyG.pt-4.pr-10.pb-4.pl-10.noselect");
 
-
-
     public void clickButtonPersonalAccount() {
         driver.findElement(buttonPersonalAccount).click();
     }
+
     public void clickButtonEnterAccount() {
         driver.findElement(buttonEnterAccount).click();
     }
+
     public void clickButtonBun() {
         driver.findElement(buttonBun).click();
     }
+
     public void clickButtonSauce() {
         driver.findElement(buttonSauce).click();
     }
+
     public void clickButtonFilling() {
         driver.findElement(buttonFilling).click();
     }
@@ -59,7 +60,6 @@ public class MainPage {
         List<WebElement> element = driver.findElements(classIngredients);
         return element.get(indexClass).getAttribute("class");
     }
-
 
     public void waitLoadPageMain() {
         new WebDriverWait(driver, Duration.ofSeconds(3))

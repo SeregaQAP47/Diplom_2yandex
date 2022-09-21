@@ -1,4 +1,4 @@
-package testApi;
+package test.api;
 
 import helper.RequestCustom;
 import io.qameta.allure.Description;
@@ -30,7 +30,6 @@ public class OrderTest {
     private String nameUser = "Lim";
     private String token;
     private String tokenLogin;
-
 
     @Test
     @DisplayName("Создание заказа с ингредиентами")

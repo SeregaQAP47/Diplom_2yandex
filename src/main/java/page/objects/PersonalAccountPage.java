@@ -1,4 +1,4 @@
-package pageObjects;
+package page.objects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -19,18 +19,10 @@ public class PersonalAccountPage {
 
     //Кнопка "Выход"
     private By buttonExit = By.xpath("//button[@type = \"button\" and text()=\"Выход\"]");
-    //Кнопка "Конструктор"
-    private By buttonConstructor = By.xpath("//p[text()=\"Конструктор\"]");
 
     public void clickExit() {
         new WebDriverWait(driver, Duration.ofSeconds(3))
                 .until(ExpectedConditions.visibilityOfElementLocated(buttonExit));
         driver.findElement(buttonExit).click();
-    }
-
-    public String getTextButtonExit() {
-        new WebDriverWait(driver, Duration.ofSeconds(3))
-                .until(ExpectedConditions.visibilityOfElementLocated(buttonExit));
-        return driver.findElement(buttonExit).getText();
     }
 }

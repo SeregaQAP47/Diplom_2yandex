@@ -1,4 +1,4 @@
-package testPage.ByYandex;
+package test.page.chrome;
 
 import io.qameta.allure.Description;
 import io.qameta.allure.junit4.DisplayName;
@@ -8,28 +8,27 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import pageObjects.LoginPage;
-import pageObjects.MainPage;
+import page.objects.LoginPage;
+import page.objects.MainPage;
 
 import static io.qameta.allure.Allure.step;
 import static org.junit.Assert.assertEquals;
 
 //Переход из личного кабинета в конструктор
-public class TransitionToTheСonstructor_Yandex {
+public class TransitionToTheСonstructor_Chrome {
     private WebDriver driver;
     private String URL = "https://stellarburgers.nomoreparties.site/";
 
-
+    //Инициализация Chrome driver
     @Before
-    //Инициализация Yandex driver
-    public void startYandex() {
-        System.setProperty("webdriver.chrome.driver", "C:/yandexdriver.exe");
+    public void startChrome() {
+        System.setProperty("webdriver.chrome.driver", "C:/chromedriver105.exe");
     }
 
     @Test
     @DisplayName("Переход в конструктор из личного кабинета, через кнопку \"Конструктор\". Chrome")
     @Description("Тестирование перехода в конструктор из личного кабинета" +
-            "<p> Для тестирование используется браузер Yandex</p>" +
+            "<p> Для тестирование используется браузер Chrome</p>" +
             "<p> Проверяем: </p>" +
             "<p> Переход в конструктор выполнен успешно</p>")
     public void testTransitionConstructorThroughTheConstructorButton() {
@@ -61,10 +60,6 @@ public class TransitionToTheСonstructor_Yandex {
 
     @Test
     @DisplayName("Переход в конструктор из личного кабинета, через логотип \"Stellar Burgers\"")
-    @Description("Тестирование перехода в конструктор через логотип \"Stellar Burgers\"" +
-            "<p> Для тестирование используется браузер Yandex</p>" +
-            "<p> Проверяем: </p>" +
-            "<p> Переход в конструктор выполнен успешно</p>")
     public void testTransitionConstructorThroughLogo_StellarBurgers() {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--headless", "--no-sandbox"); //"--start-maximized" - для запуска в максимальном размере

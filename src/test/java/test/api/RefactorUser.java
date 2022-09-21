@@ -1,4 +1,4 @@
-package testApi;
+package test.api;
 
 import helper.RequestCustom;
 import io.qameta.allure.Description;
@@ -17,7 +17,6 @@ import static org.hamcrest.Matchers.equalTo;
 public class RefactorUser {
     private Response response;
     private String token;
-
 
     @Test
     @DisplayName("Изменение имени  не авторизованного пользователя")

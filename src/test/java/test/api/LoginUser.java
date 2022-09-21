@@ -1,4 +1,4 @@
-package testApi;
+package test.api;
 
 import helper.RequestCustom;
 import io.qameta.allure.Description;
@@ -171,5 +171,4 @@ public class LoginUser {
         response.then().assertThat().body("success", equalTo(expectSuccess))
                 .and().assertThat().body("message", equalTo(expectMessage));
     }
-
 }

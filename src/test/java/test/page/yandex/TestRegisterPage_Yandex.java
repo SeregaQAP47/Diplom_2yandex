@@ -1,4 +1,4 @@
-package testPage.ByYandex;
+package test.page.yandex;
 
 import helper.RequestCustom;
 import io.qameta.allure.Description;
@@ -10,9 +10,9 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import pageObjects.LoginPage;
-import pageObjects.MainPage;
-import pageObjects.RegisterPage;
+import page.objects.LoginPage;
+import page.objects.MainPage;
+import page.objects.RegisterPage;
 import pojo.User;
 
 import static io.qameta.allure.Allure.step;

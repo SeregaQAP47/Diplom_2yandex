@@ -1,4 +1,4 @@
-package testApi;
+package test.api;
 
 import helper.RequestCustom;
 import io.qameta.allure.Description;
@@ -30,7 +30,6 @@ public class GetOrder {
     private String nameUser = "Bee";
     private String token;
     private String tokenLogin;
-
 
     @Test
     @DisplayName("Получение заказа авторизованного пользователя")
@@ -75,7 +74,6 @@ public class GetOrder {
             checkStatus(HttpStatus.SC_OK);
             checkResponseOrderUserAuthorization();
         });
-
     }
 
     @Test

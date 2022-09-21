@@ -1,7 +1,8 @@
-package testPage.ByChrome;
+package test.page.chrome;
 
 import helper.RequestCustom;
 import io.qameta.allure.Description;
+import io.qameta.allure.Step;
 import io.qameta.allure.junit4.DisplayName;
 import io.restassured.response.Response;
 import org.junit.After;
@@ -10,9 +11,9 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import pageObjects.LoginPage;
-import pageObjects.MainPage;
-import pageObjects.RegisterPage;
+import page.objects.LoginPage;
+import page.objects.MainPage;
+import page.objects.RegisterPage;
 import pojo.User;
 
 import static io.qameta.allure.Allure.step;
@@ -115,9 +116,7 @@ public class TestRegisterPage_Chrome {
         });
     }
 
-
-
-
+    @Step("Удаляем пользователь")
     private void deleteUser() {
         RequestCustom requestCustom = new RequestCustom();
         User user = new User(userEmail, userPassword, userName);

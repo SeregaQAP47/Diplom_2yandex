@@ -1,5 +1,4 @@
-package pageObjects;
-
+package page.objects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -16,9 +15,6 @@ import java.util.List;
  */
 public class RegisterPage {
     private WebDriver driver;
-
-//    https://stellarburgers.nomoreparties.site/register
-
 
     public RegisterPage(WebDriver driver) {
         this.driver = driver;
@@ -37,8 +33,6 @@ public class RegisterPage {
     //Кнопка "Войти"
     private By buttonEnter = By.cssSelector(".Auth_link__1fOlj");
 
-
-
     public void waitLoadRegisterPage() {
         new WebDriverWait(driver, Duration.ofSeconds(2))
                 .until(ExpectedConditions.visibilityOfElementLocated(h2Register));
@@ -50,14 +44,11 @@ public class RegisterPage {
         element.click();
     }
 
-
-
     //Метод ожидает сообщение о вводе не корректного пароля и возвращает строку с текстом ошибки
     public String getErrorMessageNotCorrectPassword() {
-       return new WebDriverWait(driver, Duration.ofSeconds(2))
+        return new WebDriverWait(driver, Duration.ofSeconds(2))
                 .until(ExpectedConditions.visibilityOfElementLocated(errorPassword)).getText();
     }
-
 
     //Метод заполняет поле "Имя"
     public void setName(String userName) {
@@ -80,6 +71,7 @@ public class RegisterPage {
     public void buttonRegisterClick() {
         driver.findElement(buttonRegister).click();
     }
+
     /**
      * Метод выполняет регистрацию пользователя
      *
@@ -95,5 +87,4 @@ public class RegisterPage {
         driver.findElement(passwordInput).sendKeys(password);
         driver.findElement(buttonRegister).click();
     }
-
 }

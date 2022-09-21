@@ -1,4 +1,4 @@
-package testApi;
+package test.api;
 
 import helper.RequestCustom;
 import io.qameta.allure.Description;
@@ -22,7 +22,6 @@ public class CreateUser {
     private String nameUser = "John";
     private String passwordUser = "202098";
     private String token;
-
 
     @Test
     @Tag("positive")
@@ -186,5 +185,4 @@ public class CreateUser {
         response.then().assertThat().body("success", equalTo(expectSuccess))
                 .and().assertThat().body("message", equalTo(expectMessage));
     }
-
 }

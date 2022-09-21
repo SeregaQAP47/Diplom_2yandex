@@ -1,4 +1,4 @@
-package testPage.ByYandex;
+package test.page.yandex;
 
 
 import io.qameta.allure.Description;
@@ -9,7 +9,7 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import pageObjects.MainPage;
+import page.objects.MainPage;
 
 import static io.qameta.allure.Allure.step;
 import static org.junit.Assert.assertEquals;

@@ -1,6 +1,4 @@
-package pageObjects;
-
-
+package page.objects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -17,8 +15,6 @@ import java.time.Duration;
 public class LoginPage {
     private WebDriver driver;
 
-//    https://stellarburgers.nomoreparties.site/login
-
     public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
@@ -30,7 +26,7 @@ public class LoginPage {
     //Кнопка "Войти"
     private By buttonAuthEnter = By.cssSelector(".button_button__33qZ0.button_button_type_primary__1O7Bx.button_button_size_medium__3zxIa");
     //Переход на страницу регистрации
-    private By linkPageRegister= By.cssSelector(".Auth_link__1fOlj[href=\"/register\"]");
+    private By linkPageRegister = By.cssSelector(".Auth_link__1fOlj[href=\"/register\"]");
     //Заголовок "Вход"
     private By h2Enter = By.xpath("//h2[text() = \"Вход\"]");
     //Кнопка "Восстановить пароль"
@@ -39,7 +35,6 @@ public class LoginPage {
     private By buttonConstructor = By.xpath("//p[text()=\"Конструктор\"]");
     //Логотип Stellar Burgers
     private By logoStellarBurgers = By.xpath("//div/a[@href=\"/\"]");
-
 
     //Нажатие кнопки конструктор
     public void clickButtonConstructor() {
@@ -50,11 +45,13 @@ public class LoginPage {
     public void clickLogoStellarBurgers() {
         driver.findElement(logoStellarBurgers).click();
     }
+
     public void clickButtonRestorationPassword() {
         WebElement element = driver.findElement(buttonRestorationPassword);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
         element.click();
     }
+
     public void scrollToRegisterAndClick() {
         WebElement element = driver.findElement(linkPageRegister);
         ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", element);
@@ -69,9 +66,8 @@ public class LoginPage {
     public String getTextTitle() {
         new WebDriverWait(driver, Duration.ofSeconds(2))
                 .until(ExpectedConditions.visibilityOfElementLocated(h2Enter));
-       return driver.findElement(h2Enter).getText();
+        return driver.findElement(h2Enter).getText();
     }
-
 
     /**
      * Метод осуществляет вход в приложение
@@ -84,5 +80,4 @@ public class LoginPage {
         driver.findElement(passwordInput).sendKeys(password);
         driver.findElement(buttonAuthEnter).click();
     }
-
 }
